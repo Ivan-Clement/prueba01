@@ -13,7 +13,7 @@ jobs:
         run: docker-compose up --build
 
       - name: Compress Data
-        run: zip deploy.zip ./build/ ./Dockerfile
+        run: zip deploy.zip ./build/* ./Dockerfile
 
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v20
