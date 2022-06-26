@@ -7,3 +7,10 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - ./build:/usr/app/build
+
+  prod:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - 80:80
