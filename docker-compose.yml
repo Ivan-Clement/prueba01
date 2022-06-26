@@ -10,10 +10,10 @@ services:
       - ./public:/usr/app/public:ro
       - ./src:/usr/app/src:ro
     command: npm run build
-
-  prod:
-    build:
-      context: .
-      dockerfile: Dockerfile.prod
-    ports:
-      - 80:80
+    #
+    # prod:
+    #   build:
+    #     context: .
+    #     dockerfile: Dockerfile.prod
+    #   ports:
+    #     - 80:80
