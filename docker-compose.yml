@@ -6,7 +6,10 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
-      - ./build:/usr/app/build
+      - ./build:/usr/app/build:rw
+      - ./public:/usr/app/public:ro
+      - ./src:/usr/app/src:ro
+    command: npm run build
 
   prod:
     build:

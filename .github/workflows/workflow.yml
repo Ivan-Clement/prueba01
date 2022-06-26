@@ -12,6 +12,9 @@ jobs:
       - name: Run Docker Compose
         run: docker-compose up --build
 
+      - name: Compress Data
+        run: zip deploy.zip ./build/ ./Dockerfile
+
       - name: List Items
         run: |
           pwd
