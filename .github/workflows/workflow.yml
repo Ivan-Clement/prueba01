@@ -13,7 +13,7 @@ jobs:
         run: docker-compose up --build
 
       - name: Compress Data
-        run: zip deploy.zip ./build/* ./Dockerfile
+        run: zip -r deploy.zip ./build/ ./Dockerfile
 
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v20
@@ -22,6 +22,6 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: docker-react
           environment_name: Dockerreact-env
-          version_label: 3
+          version_label: 4
           region: us-east-1
           deployment_package: deploy.zip
